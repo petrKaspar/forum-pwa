@@ -267,6 +267,63 @@ var a = '[ { "_id" : { "$oid" : "589cd22ac2ef162b33d7a296"} , "id" : "1" , "id_a
   callAnonymousApi() {
     this._callApi('ThreadsList', this.url);
   }
+  test6662(): Promise<String>{
+    // let body = JSON.stringify(location);
+    let body = {action:"aaaaaaaaaaaaaaaaaaa"};
+    var creds = "username=" + 'aaaaa' + "&password=" + 'bbbbbbbbbbbbbbb';
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    this.http.post('http://127.0.0.2:3001/true',creds, {headers: headers})
+      .map((res: Response) => res.json());
+    this.response2 = Response.toString();
+      // .toPromise()
+      // .then(
+      //   response => this.response2 = response.text(),
+      //   // error => this.response2 = error.text()
+      // );
+
+    //   .subscribe(
+    //   response => {
+    //     this.response2 = response.text();
+    //   });
+    // this.response2 = 'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq';
+  }
+
+  test666(){
+    //***********************************************************************************************
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    // var qqq = { "action": "get_threadssssssssssssssssssssssssss"};
+    var qqq =  "action" + "get_threadssssssssssssssssssssssssss";
+    // let headers = new Headers({ 'Content-Type': 'text/plain' });
+    this.http.post('http://127.0.0.2:3001/sms', '{ "action":"aaaaaaaa2222222222222aaaaaaa"', { headers: contentHeaders })
+      .subscribe(
+        response => {
+          this.response2 = response.text();
+
+        });
+
+    this.response2 = this.response3;
+    //***********************************************************************************************
+  }
+  callApiTest(){
+    var qqq = { data: "neco blablalba"};
+
+    this.http.get('http://127.0.0.1:3001/').map((res: Response) => res.text())
+      .subscribe(res => this.response3 = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+
+
+      // .toPromise()
+      // .then(response => {
+        // .subscribe( response => {
+        // this.response2 = response.text();
+        //       this.response3 = response.text();
+// this.response2=JSON.stringify(qqq);
+//         this.response3 = JSON.stringify(qqq)
+
+
+      // });
+  }
 
   callApi_Json() {
     this._callApi('Json', this.url);
